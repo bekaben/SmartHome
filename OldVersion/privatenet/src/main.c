@@ -174,7 +174,7 @@ static struct ipc_ept_cfg ep_cfg = {
 int main(void)
 {
     int err;
-
+	
     /*
 	* ESB
 	*/
@@ -223,7 +223,7 @@ int main(void)
 			old_cnt = current_cnt++;
 			IPC_msg->data = *R_msg;
 			IPC_msg->rssi = rx_payload.rssi;
-			k_msleep(20);
+			k_msleep(50);
 			err = ipc_service_send(&ep, IPC_msg, MESSAGE_LEN);
 			IPC_msg->cnt = current_cnt++;
 			k_free(IPC_msg);
